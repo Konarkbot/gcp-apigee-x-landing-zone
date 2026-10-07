@@ -1,0 +1,11 @@
+output "vpc" { value = module.network.network_self_link }
+output "app_subnet" { value = module.network.subnets["app-${var.region}"] }
+output "swp_gateway_ips" { value = module.swp.gateway_ip_addresses }
+output "swp_gateway_id" { value = module.swp.gateway_id }
+output "cloud_router" { value = module.network.router_name }
+output "apigee_org" { value = module.apigee.organization_id }
+output "apigee_instance" { value = module.apigee.instance_id }
+output "apigee_environments" { value = module.apigee.environments }
+output "apigee_envgroup" { value = module.apigee.environment_group_id }
+output "kms_key" { value = module.security.kms_key_id }
+output "audit_log_bucket" { value = module.observability.log_bucket_id }

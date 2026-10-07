@@ -1,0 +1,27 @@
+project_id = "REPLACE_WITH_PROD_PROJECT_ID"
+region = "us-central1"
+analytics_region = "us-central1"
+
+labels = {
+  owner = "api-platform"
+  cost_center = "REPLACE"
+  data_classification = "confidential"
+}
+
+# Replace with production-approved, non-overlapping CIDRs.
+app_subnet_cidr = "10.30.0.0/20"
+swp_subnet_cidr = "10.30.16.0/24"
+proxy_only_subnet_cidr = "10.30.20.0/23"
+
+# Production SWP is disabled until the enterprise Certificate Manager certificate is supplied.
+enable_swp = false
+# swp_certificate_urls = ["projects/PROJECT/locations/REGION/certificates/PROD_SWP_CERT"]
+# swp_allowed_domains = ["approved.example.com", "api.example.com"]
+
+bootstrap_secret_names = []
+enable_private_dns_zone = false
+
+apigee_environment_group = {
+  name = "prod"
+  hostnames = ["api.example.com"]
+}

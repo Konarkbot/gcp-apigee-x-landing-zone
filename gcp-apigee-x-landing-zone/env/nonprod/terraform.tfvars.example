@@ -1,0 +1,45 @@
+project_id = "REPLACE_WITH_NONPROD_PROJECT_ID"
+region = "us-central1"
+analytics_region = "us-central1"
+
+labels = {
+  owner = "api-platform"
+  cost_center = "REPLACE"
+  data_classification = "internal"
+}
+
+# Replace with the CIDRs approved by the network team.
+app_subnet_cidr = "10.20.0.0/20"
+swp_subnet_cidr = "10.20.16.0/24"
+proxy_only_subnet_cidr = "10.20.20.0/23"
+
+# SWP starts deny-by-default. Add only approved destinations.
+swp_allowed_domains = [
+  # "oauth.example.com",
+  # "backend.example.com",
+]
+
+# Production should normally reference an enterprise certificate managed by Certificate Manager.
+# For a nonprod lab only, you can use the module's self-signed certificate option, for example:
+# swp_certificate_config = {
+#   create_self_signed = {
+#     dns_names = ["swp-nonprod.example.internal"]
+#     subject = {
+#       common_name = "swp-nonprod.example.internal"
+#       organization = "Example"
+#     }
+#   }
+# }
+
+# If an existing Certificate Manager certificate is available:
+# swp_certificate_urls = ["projects/PROJECT/locations/REGION/certificates/CERT_NAME"]
+
+bootstrap_secret_names = []
+
+enable_private_dns_zone = false
+# private_dns_domain = "nonprod.example.internal."
+
+apigee_environment_group = {
+  name = "nonprod"
+  hostnames = ["api-nonprod.example.com"]
+}

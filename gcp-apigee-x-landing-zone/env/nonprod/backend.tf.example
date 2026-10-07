@@ -1,0 +1,9 @@
+# Copy to backend.tf and replace placeholders before running terraform init.
+# Use a dedicated state bucket per environment and restrict access through IAM.
+#
+# terraform {
+#   backend "gcs" {
+#     bucket = "REPLACE_WITH_TF_STATE_BUCKET"
+#     prefix = "apigee-x-landing-zone/nonprod"
+#   }
+# }

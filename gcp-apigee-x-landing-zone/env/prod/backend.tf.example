@@ -1,0 +1,8 @@
+# Copy to backend.tf and replace placeholders before running terraform init.
+#
+# terraform {
+#   backend "gcs" {
+#     bucket = "REPLACE_WITH_PROD_TF_STATE_BUCKET"
+#     prefix = "apigee-x-landing-zone/prod"
+#   }
+# }
